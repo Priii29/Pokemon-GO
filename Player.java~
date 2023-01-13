@@ -1,0 +1,53 @@
+public class Player {
+  private String name;
+  private int battlesWon;
+  private Backpack bk;
+  private Sword swd; 
+  
+  public Player (String name){
+    battlesWon = 0;
+    this.name=name;
+    bk=new Backpack();
+    swd = new Sword();
+  }
+  
+  public String getName(){
+    return name;
+  }
+  
+  public void setName(String name){
+    this.name=name;
+  }
+  
+  public int getBatWon(){
+    return battlesWon;
+  }
+  
+  public void setBatWon(int num){
+    battlesWon=num;
+  }
+  
+  public Backpack getBk(){
+    return bk;
+  }
+  
+  public void setBk(Backpack i){
+    bk=i;
+  }
+  
+  public void addPower(int num){
+    swd.add(num);
+  }
+  
+  public void useSword(Pokemon p){
+    if (swd.getStat() == true){
+      swd.use();
+      p.setHL(0);
+    }
+  }
+                           
+  public String toString(){
+    return "hi";//add 
+}
+}
+  

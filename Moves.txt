@@ -1,0 +1,9 @@
+punch punch 2
+punch kick 1
+punch dodge 0
+kick punch 2
+kick kick 1
+kick dodge 0
+dodge punch 1
+dodge kick 2
+dodge dodge 0

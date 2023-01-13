@@ -1,0 +1,27 @@
+public class Money{
+  private int coins;
+  
+  public Money(){
+    coins = 0;
+  }
+  
+  public int getCoins(){
+    return coins;
+  }
+  
+  public void setCoins(int num){
+    coins = num;
+  }
+  
+  public void use(int num){
+    coins -= num;
+  }
+  
+  public void add(int num){
+    coins += num;
+  }
+  
+  public String toString(){
+    return "Money Available: $" + coins;
+  }
+}

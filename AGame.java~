@@ -1,0 +1,21 @@
+import java.util.Scanner;
+import java.io.File;
+
+public class AGame {
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    String filename = "Table.txt";
+    Scanner file = new Scanner(new File(filename)); 
+    
+    while (file.hasNext()){
+      if (file.next().equals(type) && file.next().equals(dtype)){
+        eft = file.nextDouble();
+        break;
+      }
+    
+
+ 
+ 
+  }
+}
+}

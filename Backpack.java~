@@ -1,0 +1,101 @@
+import java.util.ArrayList;
+
+public class Backpack {
+  
+  private Pokemon p1 = new Pokemon("Pikachu", "Electric", 500, 500);
+  private Pokemon p2 = new Pokemon("Charizard", "Fire", 400, 400);
+  private Pokemon p3 = new Pokemon("Blastoise", "Water", 500, 500);
+  private Pokemon r1 = new Pokemon("Venusaur", "Grass", 200, 200);
+  private Pokemon r2 = new Pokemon("Flamethrower", "Dragon", 500, 500);
+  private Pokemon r3 = new Pokemon("Butterfree", "Bug", 500, 500);
+  private Pokemon r4 = new Pokemon("Pidgeot", "Normal", 400, 400);
+  private Pokemon r5 = new Pokemon("Arbok", "Poison", 400, 400);
+  private Pokemon r6 = new Pokemon("Sandslash", "Ground", 300, 300);
+  private Pokemon r7 = new Pokemon("Surf", "Ice", 500, 500);
+  private Pokemon r8 = new Pokemon("Fearow", "Normal", 500, 500);
+  private Pokemon r9 = new Pokemon("Raticate", "Normal", 400, 400);
+                                   
+                                  
+  private ArrayList<Pokemon> bpk = new ArrayList<Pokemon>();
+  private Pokemon [] discover = {r1, r2, r3, r4, r5, r6, r7, r8, r9};
+  private int pCount = 2;
+  private int count = 3;
+  
+  public Backpack(){
+    bpk.add(p1);
+    bpk.add(p2);
+    bpk.add(p3);
+  }
+  
+  public int getpCount(){
+    return count;
+  }
+  
+  private void setpCount(int num){
+    pCount = num;
+  }
+  
+  public void printOptions(){
+    System.out.println("1)"+r1.print());
+    System.out.println("2)"+r2.print());
+    System.out.println("3)"+r3.print());
+    System.out.println("4)"+r4.print());
+    System.out.println("5)"+r5.print());
+    System.out.println("6)"+r6.print());
+    System.out.println("7)"+r7.print());
+    System.out.println("8)"+r8.print());
+    System.out.println("9)"+r9.print());
+  }
+    
+                                   
+  public Pokemon getPokemon(int num){
+    if (num >= 1 && num <= bpk.size()){
+      return bpk.get(num-1);
+    }
+    else{
+      return null;
+    }
+  }
+  
+  public void addPokemon(int num){
+    if (num >= 1 && num <=9){
+      bpk.add(discover[num-1]);
+      pCount++;
+      count++;
+    }
+    else{
+      System.out.println("Error: Not Found"); //invalid input
+    }
+  }
+  
+  public void healPokemon(int num){
+    (bpk.get(num)).setHL((bpk.get(num)).getHL());
+  }
+ 
+  
+  public void setCount(int n){
+    if (n >=0 && n<=2){
+      pCount = n;
+    }
+    else {
+       System.out.println("Error: Number out of bounds.");
+    }
+  }
+  
+  public String toString(){
+    String str = "";
+    int k = 1;
+    for (int i = 0; i <= pCount; i++) {
+      str += "-------------------------\n|           "+(k++)+"           |\n-------------------------\n"+ bpk.get(i);
+    }
+    return str;
+    
+    //return "-------------------------\n|           1           |\n-------------------------\n"+r1+
+      //"-------------------------\n|           2           |\n-------------------------\n"+r2+
+      //"-------------------------\n|           3           |\n-------------------------\n"+r3;
+  }
+}
+      
+  
+  
+  

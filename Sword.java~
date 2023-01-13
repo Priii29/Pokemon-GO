@@ -1,0 +1,72 @@
+public class Sword {
+  private int power;
+  private boolean full;
+  
+  public Sword(){
+    power=0;
+    full = false;
+  }
+  
+  public int getPower(){
+    return power;
+  }
+  
+  public void setPower(int num){
+    power = num;
+  }
+  
+  public boolean getStat(){
+    if (power == 10){
+      full = true;
+    }
+    else {
+      full = false;
+    }
+    return full;
+  }
+  
+  public void setStat(boolean e){
+    full = e;
+  }
+    
+  public void add(int num){
+    if (power + num > 10){
+      power = 10;
+    }
+    
+    else {
+      power +=num;
+    }
+  }
+  
+  public void use(){
+    power = 0;
+  }
+  
+  public String toString(){
+    String x = "";
+    for (int i = 0; i<power; i++){
+      x+="?";
+      
+    }
+    
+    if (power < 10){
+      for (int i = 0; i<10-power; i++){
+        x+="?";
+        
+      }
+    }
+    
+    return x;
+  }
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
